@@ -11,28 +11,19 @@ function mostrarAmigos() {
 
 function sortear() {
     listaDeAmigos.sort(() => Math.random() - 0.5);
-    while (listaDeAmigos.length > 0) {
-        listaSorteio.push(listaDeAmigos[0]);
-        listaDeAmigos.splice(0, 1);
-    }
-    mostrarSorteio();
-}
-
-function mostrarSorteio() {
     let sorteados = "";
-    for (let i = 1; i < listaSorteio.length; i++) {
-        sorteados += `${listaSorteio[i - 1]} -> ${listaSorteio[i]}<br>`;
+    for (let i = 1; i < listaDeAmigos.length; i++) {
+        sorteados += `${listaDeAmigos[i - 1]} -> ${listaDeAmigos[i]}<br>`;
     }
-    sorteados += `${listaSorteio[listaSorteio.length - 1]} -> ${listaSorteio[0]}`;
+    sorteados += `${listaDeAmigos[listaDeAmigos.length - 1]} -> ${listaDeAmigos[0]}`;
     document.getElementById("lista-sorteio").innerHTML = sorteados;
 }
 
 function reiniciar() {
-    listaSorteio = [];
-    mostrarAmigos();
-    document.getElementById("lista-sorteio").innerHTML = "";
+    listaDeAmigos = [];
+    document.getElementById("lista-amigos").textContent = "";
+    document.getElementById("lista-sorteio").textContent = "";
 }
 
 let listaDeAmigos = [];
-let listaSorteio = [];
 
