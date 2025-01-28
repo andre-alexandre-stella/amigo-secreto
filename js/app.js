@@ -1,8 +1,8 @@
 function adicionar() {
-    let nomeAmigo = document.getElementById("nome-amigo").value;
-    listaDeAmigos.push(nomeAmigo);
+    let nomeAmigo = document.getElementById("nome-amigo");
+    listaDeAmigos.push(nomeAmigo.value);
     mostrarAmigos();
-    document.getElementById("nome-amigo").value = "";
+    nomeAmigo.value = "";
 }
 
 function mostrarAmigos() {
