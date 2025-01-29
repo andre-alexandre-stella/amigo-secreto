@@ -1,6 +1,14 @@
 function adicionar() {
     let nomeAmigo = document.getElementById("nome-amigo");
-    listaDeAmigos.push(nomeAmigo.value);
+
+    if (listaDeAmigos.includes(nomeAmigo.value)) {
+        alert("Nome já inserido.");
+        nomeAmigo.value = "";
+        return;
+    } else {
+        listaDeAmigos.push(nomeAmigo.value);
+    }
+
     mostrarAmigos();
     nomeAmigo.value = "";
 }
