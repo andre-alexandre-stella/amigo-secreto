@@ -21,6 +21,10 @@ function mostrarAmigos() {
 }
 
 function sortear() {
+    if (listaDeAmigos.length < 3) {
+        alert("A quantidade mínima de pessoas para o sorteio são 3. Insira mais nomes.");
+        return;
+    }
     listaDeAmigos.sort(() => Math.random() - 0.5);
     let sorteados = "";
     for (let i = 1; i < listaDeAmigos.length; i++) {
