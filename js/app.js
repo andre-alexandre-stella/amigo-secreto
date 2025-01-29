@@ -1,7 +1,10 @@
 function adicionar() {
     let nomeAmigo = document.getElementById("nome-amigo");
 
-    if (listaDeAmigos.includes(nomeAmigo.value)) {
+    if (nomeAmigo.value == "") {
+        alert("Insira um nome.");
+        return;
+    } else if (listaDeAmigos.includes(nomeAmigo.value)) {
         alert("Nome já inserido.");
         nomeAmigo.value = "";
         return;
